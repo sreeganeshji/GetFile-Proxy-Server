@@ -2,6 +2,8 @@
 # Aim and design 
 To implement handle_with_curl mechanism for the proxy server to connect to an external server through the url and serve the clients.
 
+<image src="https://raw.githubusercontent.com/sreeganeshji/GetFile-Proxy-Server/master/illustration/p1.png" width=350>
+
 The client interfaces with the proxy server which in turn interfaces with the main server which holds the data through the internet. The client requests data using the get file (gf) protocol. the proxy server uses the easy_curl api to connect with the server using its URL and acquire the data. The design choices involved making the handler multi-threaded to support multiple requests simultaneously.
 # Flow of control 
 The client uses the getFile protocol to request the proxy server for the file. It contains the name and location of the file. The proxy server translates this request into a web request by appending it with the URL of the main server. It transfers back the received files from the main server using the gf protocol to the client.
